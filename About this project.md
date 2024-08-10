@@ -3,7 +3,7 @@
 - Project's goals: Create a website to allow people to write blogs, post, share and follow others to see more of their blogs.
 - Start date: August 5
 - Completion date: August 10
-- 1 day work 12 hours
+- 1 day work 13 hours
 - This project is improved from the WEBBLOG project using React
 2. Features:
 - Features: login/register, write blogs, ability to follow, comment and like others' posts, see the list of blogs, see the list of blogs of those who you have followed

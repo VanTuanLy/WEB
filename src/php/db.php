@@ -1,7 +1,7 @@
 <?php
 $serverName = "LAPTOP-MUS82LPQ"; // Tên server của bạn
 $connectionOptions = array(
-    "Database" => "REACTLOGIN"
+    "Database" => "REACTLOGIN2"
 );
 
 // Kết nối đến SQL Server

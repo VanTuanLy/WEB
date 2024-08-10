@@ -1,12 +1,13 @@
 import React from 'react';
+import img2 from '../assets/img/img2.jpg';
+import img3 from '../assets/img/img3.jpg';
 
 class ImageSwitch extends React.Component {
     state = {
-        currentImg: 2,
+        currentImg: 1,
         Imgs: [
-            'https://mia.vn/media/uploads/tin-tuc/thuong-hieu-uniqlo-1-1690560607.jpg',
-            'https://images.squarespace-cdn.com/content/v1/591205cdbf629aee5553a0fe/1496353828992-2MV5NYW9H6P02AZYLRXY/mujibanner.jpg',
-            'https://baothainguyen.vn/file/e7837c027f6ecd14017ffa4e5f2a0e34/052024/aaa_20240517191434.jpg'
+            img2,
+            img3
         ]
     }
 

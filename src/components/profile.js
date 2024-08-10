@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import ImageSwitch from "./imageswitch";
 import BlogList from "./bloglist";
+import img1 from '../assets/img/img1.jpg';
 
 class Profile extends React.Component {
 
@@ -51,7 +52,7 @@ class Profile extends React.Component {
           <>
             <div className="userInfo-box">
                 
-                <img src='https://scontent.fsgn2-9.fna.fbcdn.net/v/t39.30808-6/453513395_2171892326538341_4406271196663426957_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=y2nWEYLqmaQQ7kNvgG4_fCZ&_nc_ht=scontent.fsgn2-9.fna&oh=00_AYAGkdoIa2kMhzMhYY2ERJqLU48HHKwbqwYUxQRQNulQew&oe=66BBD622' className='avatar'/>
+                <img src={img1} className='avatar'/>
                 <div className="userInfo-box--list">
                     <div className="userinfo name">{this.props.username}</div>
                     <div className="userinfo email">{this.state.userinfo.length > 0&&this.state.userinfo&&this.state.userinfo[0].email}</div>

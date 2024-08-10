@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-solid-svg-icons';
 
 class Like extends React.Component {
     state = {
@@ -29,7 +29,7 @@ class Like extends React.Component {
     render(){
         return ( 
             <button onClick={(e) => this.handleGetLike(e)} className='lists-item like-btn'>
-                { !this.state.liked ? <FontAwesomeIcon icon={faThumbsUp} className='like-btn_icon' /> : 'Unlike'}
+                { !this.state.liked ? <FontAwesomeIcon icon={faThumbsUp} className='like-btn_icon' /> : <FontAwesomeIcon icon={faThumbsDown} className='like-btn_icon' />}
             </button>
         )
     }

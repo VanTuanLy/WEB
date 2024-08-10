@@ -60,13 +60,33 @@ E. Create a database in "sql server":
 3. Press the button entitled "New Query" to create a space to code. Copy the code from "file webblog_database.sql" to the space that was previously created
 4. Excute the code
 
-F. Be aware: The file "db.php" will have the variable "$serverName = "LAPTOP-MUS82LPQ"." Change the value of that variable into your server name. If you use " SQL Server Authentication" in 'step 2' of 'part E,' you have to change the variable "$connectionOptions" of the "file connect.php" by using the following code:
+F. Be aware: 
+- The file "db.php" will have the variable "$serverName = "LAPTOP-MUS82LPQ"." Change the value of that variable into your server name. If you use " SQL Server Authentication" in 'step 2' of 'part E,' you have to change the variable "$connectionOptions" of the "file connect.php" by using the following code:
 ```
 $connectionOptions = array(
 "Database" => "REACTLOGIN2",
 );
 ```
-
+- In the "checkconnect.php" file, there's a variable $allowed_origins = ["http://localhost:3000","http://localhost:8080"];. If you are using port 8080 with XAMPP, you can leave it as is, but if you're using port 80, update it as follows:
+```
+$allowed_origins = [
+    "http://localhost:3000",
+    "http://localhost:80"
+];
+```
+- Additionally, if you're using port 80, modify the ".js" files containing code like this:
+```
+const response = await axios.get('http://localhost:8080/webblogvan/src/php/tên.php',
+                 { withCredentials: true }
+            );
+```
+to use port 80 everywhere:
+```
+const response = await axios.get('http://localhost:80/webblogvan/src/php/tên.php',
+                 { withCredentials: true }
+            );
+```
+- The files containing such code include: bloglist.js, blogwrite.js, comment.js, container.js, follow.js, login.js, profile.js, register.js, App.js.
 G. Restart XAMPP Control Panel: Open XAMPP Control Panel and restart Apache
 
 H. Install React:
@@ -159,7 +179,8 @@ E. Sau đó cần phải tạo database trên sql server:
 3. Nhấn vào nút New Query để tạo ra chỗ để viết code, sau đó copy code từ file webblog_database.sql vào chỗ đó.
 4. Nhấn execute để chạy code
 
-F. Lưu ý: Trong file "db.php" có biến $serverName = "LAPTOP-MUS82LPQ" hãy đổi hết giá trị của biến đó thành tên server của bạn và nếu bạn sử dụng SQL Server Authentication ở bước 2 của phần E thì cần sửa lại biến $connectionOptions của file connect.php như sau:
+F. Lưu ý: 
+- Trong file "db.php" có biến $serverName = "LAPTOP-MUS82LPQ" hãy đổi hết giá trị của biến đó thành tên server của bạn và nếu bạn sử dụng SQL Server Authentication ở bước 2 của phần E thì cần sửa lại biến $connectionOptions của file connect.php như sau:
 ```
 $connectionOptions = array(
 "Database" => "REACTLOGIN2",
@@ -167,6 +188,27 @@ $connectionOptions = array(
 "PWD" => "your_password" // Mật khẩu SQL Server*/
 );
 ```
+- Trong file "checkconnect.php" có biến $allowed_origins = ["http://localhost:3000","http://localhost:8080"]; nếu bạn sử dụng port 8080 để bằng XAMPP thì cứ để nguyên nhưng nếu bạn xài port 80 thì sửa lại như sau:
+```
+$allowed_origins = [
+    "http://localhost:3000",
+    "http://localhost:80"
+];
+```
+- Đồng thời nếu bạn xài port 80 thì hãy sửa các file có đuôi ".js" có code như này:
+```
+const response = await axios.get('http://localhost:8080/webblogvan/src/php/tên.php',
+                 { withCredentials: true }
+            );
+```
+thành port 80 hết:
+```
+const response = await axios.get('http://localhost:80/webblogvan/src/php/tên.php',
+                 { withCredentials: true }
+            );
+```
+- Các file có đoạn code như này gồm: bloglist.js, blogwrite.js, comment.js, container.js, follow.js, login.js, profile.js, register.js, App.js.
+
 
 G. Khởi Động XAMPP Control Panel: Mở XAMPP Control Panel và khởi động Apache
 

@@ -6,7 +6,7 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 class Follow extends React.Component {
 
     state = {
-        follow: false,
+        follow: false
     }
     
     handleFollow =  async (event) => {

@@ -9,7 +9,7 @@ import Profile from '../components/profile.js';
 import axios from 'axios';
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import BlogWrite from '../components/blogwrite.js';
-
+import Group from '../components/group.js';
 
 class App extends React.Component {
 
@@ -28,31 +28,6 @@ class App extends React.Component {
   }
 
   getUser = (user) => {
-    // fetch('http://localhost:8080/webblogvan/src/php/getuser.php', {
-    //   credentials: 'include' // Đảm bảo gửi cookie cùng với yêu cầu
-    // })
-    // .then(response => response.json())
-    // .then(data => {
-    //     if (data.username) {
-    //         this.setState({ username: data.username });
-    //     } else {
-    //         console.log('User not logged in');
-    //     }
-    // })
-    // .catch(error => console.error('Error:', error));
-    // axios.get('http://localhost:8080/webblogvan/src/php/getuser.php', {
-    //   withCredentials: true // Đảm bảo gửi cookie cùng với yêu cầu}
-    // })
-    // .then(response => {
-    //     const data = response.data;
-    //     console.log('data: ',data); // In ra phản hồi để kiểm tra
-    //     if (data.username) {
-    //         this.setState({ username: data.username });
-    //     } else {
-    //         console.log('User not logged in');
-    //     }
-    // })
-    // .catch(error => console.error('Error:', error));
     this.setState(
       {
         username: user
@@ -100,6 +75,9 @@ class App extends React.Component {
                   
                 </Route>
                 <Route path="/write" element={<BlogWrite username={this.state.username} />}>
+                  
+                </Route>
+                <Route path="/group" element={<Group username={this.state.username} />}>
                   
                 </Route>
               </Routes> 

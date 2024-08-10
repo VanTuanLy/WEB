@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 class NavBar extends React.Component {
 
@@ -20,6 +20,10 @@ class NavBar extends React.Component {
                                     <li className="header__navbar-item">
                                         {/* <a href="/register" className="header__navbar-item-link">News</a> */}
                                         <NavLink to="/write" className="header__navbar-item-link">Write</NavLink>
+                                    </li>
+                                    <li className="header__navbar-item">
+                                        {/* <a href="/login" className="header__navbar-item-link">Write</a> */}
+                                        <NavLink to="/group" className="header__navbar-item-link">Group</NavLink>
                                     </li>
                                     <li className="header__navbar-item">
                                         {/* <a href="/login" className="header__navbar-item-link">Write</a> */}

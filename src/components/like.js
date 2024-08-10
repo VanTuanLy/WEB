@@ -8,17 +8,6 @@ class Like extends React.Component {
     }
 
     handleGetLike = (event) => {
-        // this.props.likelist && this.props.likelist.length > 0 &&
-        //     this.props.likelist.map((likeitem, likeindex) =>{ 
-        //         if(likeitem.ID === this.props.item && likeitem.username === this.props.username){
-        //             this.setState(
-        //                 {
-        //                     liked: true
-        //                 }
-        //             )
-        //         }
-        //     }
-        //     )
         
         event.preventDefault();
         this.state.liked ?

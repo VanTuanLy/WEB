@@ -69,7 +69,34 @@ $connectionOptions = array(
 
 G. Restart XAMPP Control Panel: Open XAMPP Control Panel and restart Apache
 
-H. Access project from browser: http://localhost/your_project_name. Example: (http://localhost/WEBBLOG/html/index.html)
+H. Install React:
+
+1. Install Node.js and npm
+Node.js comes with npm, so when you install Node.js, npm will be installed automatically. To install Node.js:
+
+2. Visit the Node.js website and download the version suitable for your operating system.
+After downloading, run the installer and follow the instructions to install Node.js.
+Check Node.js and npm installation
+After installing Node.js, you can check the version of Node.js and npm using the following commands:
+```
+node -v
+npm -v
+```
+If you see the version numbers displayed, it means that Node.js and npm have been successfully installed.
+
+3. Install create-react-app
+"create-react-app" is a tool for setting up a React project with predefined configurations. To install "create-react-app" globally:
+```
+npm install -g create-react-app
+```
+I. Start the Project:
+
+1. Clone the project from GitHub to your local machine.
+2. After successfully cloning, navigate into the project's directory: ```cd webblogvan```
+3. Install the dependencies: ```npm install ```
+4. Run the application: ```npm start```
+
+
 
 Vietnamese
 

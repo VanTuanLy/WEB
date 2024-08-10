@@ -150,6 +150,7 @@ Node.js đi kèm với npm, nên khi bạn cài đặt Node.js, npm sẽ tự đ
 
 Truy cập trang web Node.js và tải phiên bản phù hợp với hệ điều hành của bạn.
 Sau khi tải xuống, bạn chạy tệp cài đặt và làm theo các bước hướng dẫn để cài đặt Node.js.
+
 2. Kiểm tra cài đặt Node.js và npm
 Sau khi cài đặt Node.js, bạn có thể kiểm tra phiên bản Node.js và npm bằng các lệnh sau:
 ```

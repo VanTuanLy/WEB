@@ -47,6 +47,17 @@ class Follow extends React.Component {
             follow: isFollowed
         });
     }
+    
+    componentDidUpdate(prevProps) {
+        if (prevProps.followlist !== this.props.followlist || 
+            prevProps.follower !== this.props.follower || 
+            prevProps.followed !== this.props.followed) {
+            const isFollowed = this.props.followlist.some(item =>
+                item.BE_FOLLOWED === this.props.followed && item.FOLLOWER === this.props.follower
+            );
+            this.setState({ follow: isFollowed });
+        }
+    }
 
     render() {
         return (

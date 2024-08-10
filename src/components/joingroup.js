@@ -49,6 +49,16 @@ class JoinGroup extends React.Component {
         });
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.joinlist !== this.props.joinlist || prevProps.group_id !== this.props.group_id) {
+            const isJoined = this.props.joinlist.some(item =>
+                item.MEMBERS === this.props.username && item.GROUP_ID === this.props.group_id
+            );
+            this.setState({ join: isJoined });
+        }
+    }
+    
+
     render() {
         return (
             

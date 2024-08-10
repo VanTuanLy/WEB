@@ -26,6 +26,15 @@ class Like extends React.Component {
         this.setState({ liked: isLiked });
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps.likelist !== this.props.likelist || prevProps.item !== this.props.item) {
+            const isLiked = this.props.likelist.some(likeitem => 
+                likeitem.ID === this.props.item && likeitem.username === this.props.username
+            );
+            this.setState({ liked: isLiked });
+        }
+    }
+
     render(){
         return ( 
             <button onClick={(e) => this.handleGetLike(e)} className='lists-item like-btn'>

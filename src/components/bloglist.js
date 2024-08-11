@@ -142,8 +142,8 @@ class BlogList extends React.Component {
                     :
                         this.props.followlistchange === '' && this.props.group === null? 
                         list && list.length > 0 &&
-                            list.map((item, index) => {
-                                return (
+                            list.map((item, index) => 
+                                this.props.group === null ?
                                     <div className='lists' key={item.ID}>
                                         <div className='lists-item author'>{item.WRITERS}</div>
                                         <div className='lists-item time'>{this.formatDate(item.CREATE_AT.date)}</div>
@@ -157,8 +157,9 @@ class BlogList extends React.Component {
                                             <Comment username={this.props.username} item = {item.ID}/>
                                         </div>
                                     </div>
-                                )
-                            })
+                                :
+                                <div></div>
+                            )
                         :
                         this.props.group === null ?
                         list && list.length > 0 &&

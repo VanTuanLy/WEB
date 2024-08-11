@@ -100,7 +100,7 @@ class Container extends React.Component {
                     </div>
                     <div className='change-box'>
                         <div className='followlist-item all-list'>
-                            <button onClick={(e) => this.handleChangeBloglistAll(e, '', null)} className='changeblogshow-btn'>All</button>
+                            <button onClick={(e) => this.handleChangeBloglistAll(e, '', null)} className='changeblogshow-btn'>Public</button>
                         </div>
                     <div className='followlist'>
                             <div className='follow-item'><span className='bars-icon'><FontAwesomeIcon icon={faBars} /></span>Group</div>

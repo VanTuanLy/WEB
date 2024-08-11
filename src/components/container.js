@@ -99,7 +99,7 @@ class Container extends React.Component {
                         <BlogList username={this.props.username} profile = {false} followlistchange ={this.state.check} group = {this.state.group} />
                     </div>
                     <div className='change-box'>
-                        <div className='followlist-item'>
+                        <div className='followlist-item all-list'>
                             <button onClick={(e) => this.handleChangeBloglistAll(e, '', null)} className='changeblogshow-btn'>All</button>
                         </div>
                     <div className='followlist'>

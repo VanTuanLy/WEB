@@ -15,6 +15,8 @@
 + See the list of blogs: user can see the list of blogs and choose the blog they want to read 
 + See the list of blogs of those you have followed: user can see the list of blogs of those they have followed and choose the blog they want to read
 + Comment: comment on the blog
++ Create group: create a group and you can post blog on the group
++ Join group: join other user's group
 3. Design and Database:
 - Design: use Figma
 - Database: use SQL server to create the database to save user data

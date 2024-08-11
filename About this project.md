@@ -6,7 +6,7 @@
 - 1 day work 13 hours
 - This project is improved from the WEBBLOG project using React
 2. Features:
-- Features: login/register, write blogs, ability to follow, comment and like others' posts, see the list of blogs, see the list of blogs of those who you have followed
+- Features: login/register, write blogs, ability to follow, comment and like others' posts, see the list of blogs, see the list of blogs of those who you have followed, comment, create group, join group
 - Detail:
 + Login/register: Create a new account,then login to use the web page
 + Write blog: write your blog and publish on the website

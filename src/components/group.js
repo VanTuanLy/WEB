@@ -5,6 +5,7 @@ import JoinGroup from './joingroup';
 import ShowDescribe from './showdescribe';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserGroup } from '@fortawesome/free-solid-svg-icons';
+import BlogWrite from './blogwrite';
 
 class Group extends React.Component {
 
@@ -76,6 +77,7 @@ class Group extends React.Component {
         let {listgroup} = this.state;
         let {listjoin} = this.state;
         return (
+            <>
             <div className='link-box'>
                 <div className='list-group--box'>
                 <span className='name'>Group<FontAwesomeIcon icon={faUserGroup} /></span>
@@ -98,6 +100,7 @@ class Group extends React.Component {
                 </div>
                 <CreateGroup username = {this.props.username}/>
             </div>
+            </>
         )
     }
 }

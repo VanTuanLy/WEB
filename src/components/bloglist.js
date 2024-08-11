@@ -136,52 +136,75 @@ class BlogList extends React.Component {
                                     </div>
                                 </div>
                             
-                        :
-                        <div></div>
-                    )
-                    :
-                    this.props.followlistchange === '' ? 
-                    list && list.length > 0 &&
-                        list.map((item, index) => {
-                            return (
-                                <div className='lists' key={item.ID}>
-                                    <div className='lists-item author'>{item.WRITERS}</div>
-                                    <div className='lists-item time'>{this.formatDate(item.CREATE_AT.date)}</div>
-                                    <div className='lists-item titles'>{item.TITLES}</div>
-                                    <div className='lists-item tags'>{item.HASHTAGS}</div>
-                                    <ShowContent content={item.CONTENTS}/>
-                                    <div className='like_follow-box'>
-                                        <div className='lists-item like'><span className='like-icon'><FontAwesomeIcon icon={faThumbsUp} /></span>{item.LIKES}</div>
-                                        <Like username={this.props.username} item={item.ID} likelist={likelist} handleLike={this.handleLike} />
-                                        <Follow follower={this.props.username}  followed={item.WRITERS} followlist={followlist} />
-                                        <Comment username={this.props.username} item = {item.ID}/>
-                                    </div>
-                                </div>
-                            )
-                        })
-                    :
-                    list && list.length > 0 &&
-                        list.map((item, index) => 
-                            this.props.followlistchange === item.WRITERS ? 
-                            
-                                <div className='lists' key={item.ID}>
-                                    <div className='lists-item author'>{item.WRITERS}</div>
-                                    <div className='lists-item time'>{this.formatDate(item.CREATE_AT.date)}</div>
-                                    <div className='lists-item titles'>{item.TITLES}</div>
-                                    <div className='lists-item tags'>{item.HASHTAGS}</div>
-                                    <ShowContent content={item.CONTENTS}/>
-                                    <div className='like_follow-box'>
-                                        <div className='lists-item like'><span className='like-icon'><FontAwesomeIcon icon={faThumbsUp} /></span>{item.LIKES}</div>
-                                        <Like username={this.props.username} item={item.ID} likelist={likelist} handleLike={this.handleLike} />
-                                        <Follow follower={this.props.username}  followed={item.WRITERS} followlist={followlist} />
-                                        <Comment username={this.props.username} item = {item.ID}/>
-                                    </div>
-                                </div>
-                            
                             :
                             <div></div>
-
                     )
+                    :
+                        this.props.followlistchange === '' && this.props.group === null? 
+                        list && list.length > 0 &&
+                            list.map((item, index) => {
+                                return (
+                                    <div className='lists' key={item.ID}>
+                                        <div className='lists-item author'>{item.WRITERS}</div>
+                                        <div className='lists-item time'>{this.formatDate(item.CREATE_AT.date)}</div>
+                                        <div className='lists-item titles'>{item.TITLES}</div>
+                                        <div className='lists-item tags'>{item.HASHTAGS}</div>
+                                        <ShowContent content={item.CONTENTS}/>
+                                        <div className='like_follow-box'>
+                                            <div className='lists-item like'><span className='like-icon'><FontAwesomeIcon icon={faThumbsUp} /></span>{item.LIKES}</div>
+                                            <Like username={this.props.username} item={item.ID} likelist={likelist} handleLike={this.handleLike} />
+                                            <Follow follower={this.props.username}  followed={item.WRITERS} followlist={followlist} />
+                                            <Comment username={this.props.username} item = {item.ID}/>
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        :
+                        this.props.group === null ?
+                        list && list.length > 0 &&
+                            list.map((item, index) => 
+                                this.props.followlistchange === item.WRITERS ? 
+                                
+                                    <div className='lists' key={item.ID}>
+                                        <div className='lists-item author'>{item.WRITERS}</div>
+                                        <div className='lists-item time'>{this.formatDate(item.CREATE_AT.date)}</div>
+                                        <div className='lists-item titles'>{item.TITLES}</div>
+                                        <div className='lists-item tags'>{item.HASHTAGS}</div>
+                                        <ShowContent content={item.CONTENTS}/>
+                                        <div className='like_follow-box'>
+                                            <div className='lists-item like'><span className='like-icon'><FontAwesomeIcon icon={faThumbsUp} /></span>{item.LIKES}</div>
+                                            <Like username={this.props.username} item={item.ID} likelist={likelist} handleLike={this.handleLike} />
+                                            <Follow follower={this.props.username}  followed={item.WRITERS} followlist={followlist} />
+                                            <Comment username={this.props.username} item = {item.ID}/>
+                                        </div>
+                                    </div>   
+                                    :
+                                    <div></div>
+                        ) 
+                        :
+                        this.props.followlistchange === '' ?
+                        list && list.length > 0 &&
+                            list.map((item, index) => 
+                                this.props.group === item.GROUP_ID ? 
+                                
+                                    <div className='lists' key={item.ID}>
+                                        <div className='lists-item author'>{item.WRITERS}</div>
+                                        <div className='lists-item time'>{this.formatDate(item.CREATE_AT.date)}</div>
+                                        <div className='lists-item titles'>{item.TITLES}</div>
+                                        <div className='lists-item tags'>{item.HASHTAGS}</div>
+                                        <ShowContent content={item.CONTENTS}/>
+                                        <div className='like_follow-box'>
+                                            <div className='lists-item like'><span className='like-icon'><FontAwesomeIcon icon={faThumbsUp} /></span>{item.LIKES}</div>
+                                            <Like username={this.props.username} item={item.ID} likelist={likelist} handleLike={this.handleLike} />
+                                            <Follow follower={this.props.username}  followed={item.WRITERS} followlist={followlist} />
+                                            <Comment username={this.props.username} item = {item.ID}/>
+                                        </div>
+                                    </div>
+                        :
+                        <div></div>
+                        )
+                        :
+                        <div></div>
                 }
             </div>
         

@@ -10,7 +10,9 @@ class Container extends React.Component {
 
     state = {
         followlist: [],
-        check: ''
+        listgroup:[],
+        check: '',
+        group: null
     }
 
     fetchFollow = async () => {
@@ -28,23 +30,61 @@ class Container extends React.Component {
           }
     }
 
+    fetchGroup = async () => {
+        try {
+            const response = await axios.get('http://localhost:8080/webblogvan/src/php/groupusers.php',
+                { withCredentials: true }
+            );
+            this.setState(
+              {listgroup: response.data}
+            )
+            console.log(response.data);
+          } catch (error) {
+            console.error('There was an error!', error);
+            alert('An error occurred. Please try again.');
+          }
+    }
+
+    handleChangeBloglistAll = (event, followed, group_id) => {
+        event.preventDefault();
+        this.setState(
+            {
+                check: followed,
+                group: group_id
+            }
+        )
+    }
+
     handleChangeBloglist = (event, followed) => {
         event.preventDefault();
         console.log(followed);
         this.setState(
             {
-                check: followed
+                check: followed,
+                group: null
+            }
+        )
+    }
+
+    handleChangeListByGroup = (event, group_id) => {
+        event.preventDefault();
+        this.setState(
+            {
+                group: group_id,
+                check: ''
             }
         )
     }
 
     componentDidMount () {
         this.fetchFollow();
+        this.fetchGroup();
     }
 
     render() {
 
         let {followlist} = this.state;
+        let {listgroup} = this.state;
         console.log(">>", followlist);
         return (
             <>
@@ -56,24 +96,41 @@ class Container extends React.Component {
                 </div>
                 <div className='grid container'>
                     <div className='blog-list'>
-                        <BlogList username={this.props.username} profile = {false} followlistchange ={this.state.check} />
+                        <BlogList username={this.props.username} profile = {false} followlistchange ={this.state.check} group = {this.state.group} />
                     </div>
+                    <div className='change-box'>
+                        <div className='followlist-item'>
+                            <button onClick={(e) => this.handleChangeBloglistAll(e, '', null)} className='changeblogshow-btn'>All</button>
+                        </div>
                     <div className='followlist'>
-                        <div className='follow-item'><span className='bars-icon'><FontAwesomeIcon icon={faBars} /></span>Following</div>
-                            <div className='followlist-item'>
-                                <button onClick={(e) => this.handleChangeBloglist(e, '')} className='changeblogshow-btn'>All</button>
-                            </div>
-                        {
-                            followlist && followlist.length > 0 &&
-                                followlist.map((item, index) =>
-                                    this.props.username === item.FOLLOWER ? 
-                                        <div className='followlist-item' key={index}>
-                                            <button onClick={(e) => this.handleChangeBloglist(e, item.BE_FOLLOWED)} className='changeblogshow-btn'>{item.BE_FOLLOWED}</button>
-                                        </div>
-                                    :
-                                    <div></div>
-                                )
-                        }
+                            <div className='follow-item'><span className='bars-icon'><FontAwesomeIcon icon={faBars} /></span>Group</div>
+                            {
+                                listgroup && listgroup.length > 0 &&
+                                    listgroup.map((item, index) =>
+                                        this.props.username === item.MEMBERS ? 
+                                            <div className='followlist-item' key={index}>
+                                                <button onClick={(e) => this.handleChangeListByGroup(e, item.GROUP_ID)} className='changeblogshow-btn'>{item.GROUP_NAME}</button>
+                                            </div>
+                                        :
+                                        <div></div>
+                                    )
+                            }
+                        </div>
+                        <div className='followlist'>
+                            <div className='follow-item'><span className='bars-icon'><FontAwesomeIcon icon={faBars} /></span>Following</div>
+                            {
+                                followlist && followlist.length > 0 &&
+                                    followlist.map((item, index) =>
+                                        this.props.username === item.FOLLOWER ? 
+                                            <div className='followlist-item' key={index}>
+                                                <button onClick={(e) => this.handleChangeBloglist(e, item.BE_FOLLOWED)} className='changeblogshow-btn'>{item.BE_FOLLOWED}</button>
+                                            </div>
+                                        :
+                                        <div></div>
+                                    )
+                            }
+                        </div>
+                        
                     </div>
                 </div>
             </>

@@ -12,6 +12,7 @@ $title = $data->title;
 $tags = $data->tags;
 $blog = $data->blog;
 $username = $data->username;
+$id = $data->id;
 
 // Kiểm tra xem người dùng đã tồn tại chưa
 $sql = "SELECT * FROM Users WHERE username = ?";
@@ -25,8 +26,8 @@ if ($stmt === false) {
 
 if (sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
 
-    $sql = "INSERT INTO WRITE_CONTENT (WRITERS, TITLES, HASHTAGS, CONTENTS) VALUES (?, ?, ?, ?)";
-    $params = array($username, $title, $tags, $blog);
+    $sql = "INSERT INTO WRITE_CONTENT (WRITERS, TITLES, HASHTAGS, CONTENTS, GROUP_ID) VALUES (?, ?, ?, ?, ?)";
+    $params = array($username, $title, $tags, $blog, $id);
     $stmt = sqlsrv_query($conn, $sql, $params);
 
     if ($stmt === false) {

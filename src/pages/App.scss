@@ -142,22 +142,26 @@ html {
 }
 
 .container {
-  margin-top: 130px;
+  margin-top: 350px;
   display: flex;
   justify-content: space-between;
 }
 
 .blog-list {
   width: 70%;
-  height: 150px;
+  max-height: 2000px;
+  overflow-y: auto;
 }
 
 .followlist {
-  width: 25%;
+  max-height: 530px;
+  overflow-y: auto;
+  width: 100%;
   font-size: 2.5rem;
   background-color: rgb(189, 183, 183);
   border-radius: 10px;
   box-shadow: 0px 2px 5px gray;
+  margin-bottom: 40px;
 }
 
 .follow-item {
@@ -480,7 +484,6 @@ input[type="password"] {
   font-size: 3rem;
   margin: auto;
   margin-bottom: 20px;
-  margin-top: 80px;
 }
 
 .blog-form {
@@ -511,7 +514,7 @@ input[type="password"] {
 .post-btn {
   height: 50px;
   width: 10%;
-  margin: auto;
+  margin: 12px auto;
   margin-bottom: 20px;
   cursor: pointer;
 }
@@ -796,5 +799,29 @@ input[type="password"] {
   cursor: pointer;
 }
 
+.writeblog-box {
+  display: flex;
+  margin-top: 70px;
+  justify-content: space-around;
+}
+
+.writeblog-item {
+  width: 65%;
+}
+
+.grouplist {
+  max-height: 530px;
+  overflow-y: auto;
+  width: 30%;
+  font-size: 3rem;
+}
+
+.checkbox-item {
+  height: 25px;
+}
+
+.change-box {
+  width: 25%;
+}
 
 

@@ -86,7 +86,7 @@ const response = await axios.get('http://localhost:80/webblogvan/src/php/tên.ph
                  { withCredentials: true }
             );
 ```
-- The files containing such code include: bloglist.js, blogwrite.js, comment.js, container.js, follow.js, login.js, profile.js, register.js, App.js.
+- The files containing such code include: bloglist.js, blogwrite.js, comment.js, container.js, follow.js, login.js, profile.js, register.js, App.js, group.js, creategroup.js, joingroup.js.
 G. Restart XAMPP Control Panel: Open XAMPP Control Panel and restart Apache
 
 H. Install React:
@@ -207,7 +207,7 @@ const response = await axios.get('http://localhost:80/webblogvan/src/php/tên.ph
                  { withCredentials: true }
             );
 ```
-- Các file có đoạn code như này gồm: bloglist.js, blogwrite.js, comment.js, container.js, follow.js, login.js, profile.js, register.js, App.js.
+- Các file có đoạn code như này gồm: bloglist.js, blogwrite.js, comment.js, container.js, follow.js, login.js, profile.js, register.js, App.js, group.js, creategroup.js, joingroup.js.
 
 
 G. Khởi Động XAMPP Control Panel: Mở XAMPP Control Panel và khởi động Apache

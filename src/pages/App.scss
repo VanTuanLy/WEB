@@ -210,6 +210,8 @@ html {
   bottom: 0;
   display: flex;
   z-index: 2;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal__overlay {
@@ -220,8 +222,7 @@ html {
 }
 
 .modal__body {
-  margin: auto;
-  width: 500px;
+  width: 450px;
   height: 520px;
   border-radius: 12px;
   background-color: #fff;
@@ -264,12 +265,21 @@ input[type="password"] {
   padding-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+}
 
+.auth-form__container {
+  display: flex;
+  flex-direction: column;
+  width: auto;
 }
 
 .auth-form__logo {
   font-size: 3rem;
-  margin: 30px;
+  margin: 40px auto;
   text-align: center;
   text-decoration: none;
   color: #0f1a31;
@@ -321,20 +331,11 @@ input[type="password"] {
 }
 
 .auth-form__input-mail {
-  width: 210px;
-  margin-right: 35px;
+  width: 100%;
 }
 
 .auth-form__input-name {
-  width: 210px;
-}
-
-.auth-form__group-mail {
-  display: inline;
-}
-
-.auth-form__group-name {
-  display: inline;
+  width: 100%;
 }
 
 .auth-form__aside {
@@ -349,6 +350,7 @@ input[type="password"] {
 
 .auth-form__controls {
   text-align: center;
+  width: 100%;
 }
 
 .btn--with-controls {
@@ -357,7 +359,8 @@ input[type="password"] {
   background-color: #aacefb;
   color: #fff;
   text-align: center;
-  width: 460px;
+  width: 100%;
+  margin: auto;
   height: 40px;
   border-radius: 5px;
   cursor: pointer;
@@ -910,6 +913,11 @@ input[type="password"] {
   }
 }
 
-
+@media only screen and (max-height: 430px) {
+  .modal__body {
+    max-height: 400px;
+    overflow-y: scroll;
+  }
+}
 
 

@@ -44,11 +44,11 @@ class NavBar extends React.Component {
                                 <label htmlFor='nav-mobile-input' className='header__navbar-item icon-mobile'>
                                     <FontAwesomeIcon icon={faListUl} className='nav-icon'/>
                                 </label>
-                                
                             </nav>
                             
                         </div>
                         <input type='checkbox' id="nav-mobile-input"/>
+                        <label htmlFor='nav-mobile-input' className='overlay'></label>
                         <nav className='nav__mobile'>
                             <ul className="header__navbar-mobile--list">
                                 <li className="header__navbar-mobile--item" id="login-register">

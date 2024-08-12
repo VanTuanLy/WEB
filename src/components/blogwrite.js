@@ -109,22 +109,22 @@ class BlogWrite extends React.Component {
                 </div>
                 <div className='grouplist'>
                     <div className='pen-icon'><FontAwesomeIcon icon={faListUl} /> Group</div>
-                    <div className='list-group'>
+                    <label className='list-group'>
                         <input type='radio' onChange={(e) => this.handleChangeId(e, null)} name='radio' className='list-group--item checkbox-item'/>
                         <div className='list-group--item list-group--name'>Public</div>
-                    </div>
+                    </label>
                     <div>
                         {
                             listgroup&&listgroup.length > 0 &&
                             listgroup.map((item, index) => 
                                 item.MEMBERS === this.props.username ?
                                     
-                                    <div className='list-group' key={index}>
+                                    <label className='list-group' key={index}>
                                         <input type='radio' onChange={(e) => this.handleChangeId(e, item.GROUP_ID)} name='radio' className='list-group--item checkbox-item'/>
                                         <div className='list-group--item list-group--name'>{item.GROUP_NAME}</div>
                                         <div className='list-group--item'><span className='before-item'>Creator: </span>{item.CREATOR}</div>
                                         <div className='list-group--item'><div className='before-item'>Describe: </div><ShowDescribe describe = {item.DESCRIBE} /></div>
-                                    </div>
+                                    </label>
                                 :
                                 <div></div>
                             )

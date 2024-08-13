@@ -608,13 +608,6 @@ input[type="password"] {
   height: 130px;
 }
 
-.btn-submit {
-  width: 13%;
-  height: 40px;
-  margin: 20px auto;
-  cursor: pointer;
-}
-
 .comment {
   border: none;
   background-color: #fff;
@@ -651,12 +644,6 @@ input[type="password"] {
   display: flex;
   justify-content: center;
   margin: 20px 0;
-}
-
-.hidecomment-btn {
-  width: 15%;
-  height: 40px;
-  cursor: pointer;
 }
 
 .new-assign {
@@ -821,6 +808,11 @@ input[type="password"] {
 
 .all-list {
   margin-bottom: 30px;
+}
+
+.active {
+  text-decoration: none;
+  color: black;
 }
 
 // Mobile

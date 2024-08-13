@@ -91,7 +91,7 @@ class Comment extends React.Component {
                         this.state.check || this.state.checkShowComment?
                     <form onSubmit={(e) => this.handleSubmitComment(e)} className="comment-box">
                         <textarea onChange={(e) => this.handleComment(e)} className="comment-box--text"/>
-                        <button type="submit" className="btn-submit">Submit</button>
+                        <button type="submit" className="post-btn">Submit</button>
                     </form> 
                     : <div className="comment-box" >
                     </div>
@@ -110,7 +110,7 @@ class Comment extends React.Component {
                         <>
                             <ShowComment commentlist = {commentlist} blogId={this.props.item} />
                             <div className="hidecomment">
-                                <button className="hidecomment-btn" onClick={(e) => this.handleShow(e)}>Hide Comment</button>
+                                <button className="post-btn" onClick={(e) => this.handleShow(e)}>Hide Comment</button>
                             </div>
                         </>
                     :

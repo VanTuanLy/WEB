@@ -15,7 +15,7 @@ class NavBar extends React.Component {
                                 <ul className="header__navbar-list">
                                     <li className="header__navbar-item">
                                         {/* <a href="/" className="header__navbar-item-link">WBVAN</a> */}
-                                        <NavLink to="/" className="header__navbar-item-link" exact={true} >WBVAN</NavLink>
+                                        <NavLink to="/" className={({ isActive }) => isActive ? "active" : "header__navbar-item-link"} exact={true} >WBVAN</NavLink>
                                     </li>
                                 </ul>
                                 <ul className="header__navbar-list navbar-mobile">

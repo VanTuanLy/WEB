@@ -23,7 +23,7 @@ if ($stmt === false) {
 }
 
 if (sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC)) {
-    echo "Username already exists.";
+    echo json_encode(array("message" => "Username already exists"));
 } else {
     $sql = "INSERT INTO users (username, passwords, email) VALUES (?, ?, ?)";
     $params = array($username, $password, $email);

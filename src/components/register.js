@@ -69,6 +69,11 @@ class Register extends React.Component {
         )
     }
 
+    handleConfirmPass = (event) => {
+        event.preventDefault();
+        alert("Password do not match");
+    }
+
     render() {
         return (
             <>
@@ -89,7 +94,7 @@ class Register extends React.Component {
                                     <div className="auth-form__form">
                                         <div className="auth-form__group auth-form__group-mail">
                                             <label htmlFor="email"></label>
-                                            <input type="text" value={this.state.email} onChange={(e) => this.handleChangeEmail(e)} className="auth-form__input auth-form__input-mail" placeholder="Your email" required/>
+                                            <input type="email" value={this.state.email} onChange={(e) => this.handleChangeEmail(e)} className="auth-form__input auth-form__input-mail" placeholder="Your email" required/>
                                         </div>
                                         <div className="auth-form__group auth-form__group-name">
                                             <label htmlFor="username"></label>
@@ -101,6 +106,7 @@ class Register extends React.Component {
                                         </div>
                                         <div className="auth-form__group">
                                             <input type="password" value={this.state.confirmpass} onChange={(e) => this.handleChangeConfirmPass(e)} className="auth-form__input" placeholder="Confirm your password" required/>
+                                            <div className='confirm'>{this.state.password === this.state.confirmpass ? '' : "Password do not match"}</div>
                                         </div>
                                     </div>
                                     <div className="auth-form__aside">
@@ -111,7 +117,12 @@ class Register extends React.Component {
                                         </p>
                                     </div>
                                     <div className="auth-form__controls">
-                                        <button type="submit" className="btn btn--with-controls">Register</button>
+                                        {
+                                        this.state.password === this.state.confirmpass ? 
+                                            <button type="submit" className="btn btn--with-controls">Register</button>
+                                        :
+                                            <button onClick={(e) => this.handleConfirmPass(e)} className="btn btn--with-controls">Register</button>
+                                        }
                                     </div>
                                 </form>
                                 <div className="auth-form__socials">

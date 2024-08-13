@@ -251,7 +251,7 @@ html {
   color: #fff;
 }
 
-input[type="text"] {
+input[type="text"], input[type="email"] {
   padding-left: 12px;
   font-size: 1.6rem;
 } 
@@ -813,6 +813,10 @@ input[type="password"] {
 .active {
   text-decoration: none;
   color: black;
+}
+
+.confirm {
+  color: red;
 }
 
 // Mobile
